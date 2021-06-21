@@ -187,6 +187,7 @@ class Stripe {
     try {
       final paymentMethod = await _platform.confirmPaymentMethod(
           paymentIntentClientSecret, data, options);
+      print(paymentMethod);
       return paymentMethod;
     } on StripeError {
       rethrow;
