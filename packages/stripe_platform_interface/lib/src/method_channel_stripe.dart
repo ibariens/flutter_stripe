@@ -73,6 +73,7 @@ class MethodChannelStripe extends StripePlatform {
     PaymentMethodParams params, [
     Map<String, String> options = const {},
   ]) async {
+      print(params.toJson());
     try {
       final result = await _methodChannel
           .invokeMapMethod<String, dynamic>('confirmPaymentMethod', {
