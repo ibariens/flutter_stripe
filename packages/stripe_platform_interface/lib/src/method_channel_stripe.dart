@@ -80,8 +80,10 @@ class MethodChannelStripe extends StripePlatform {
         'params': params.toJson(),
         'options': options,
       });
+        print(result);
       return PaymentIntent.fromJson(result.unfoldToNonNull());
     } on Exception catch (_) {
+        print(_);
       throw const StripeError<PaymentIntentError>(
         code: PaymentIntentError.unknown,
         message: 'Confirming payment intent failed',
